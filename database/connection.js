@@ -6,5 +6,4 @@ const sequelize = new Sequelize("IM_Car", "root", "", {
 });
 
 module.exports = sequelize;
-
 global.sequelize = sequelize;

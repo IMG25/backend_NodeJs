@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
-
-module.exports = Sequelize.define("Car", {
+const sequelize = require("../database/connection");
+module.exports = sequelize.define("Car", {
   id: {
     type: Sequelize.INTEGER(11),
     allowNull: false,
@@ -8,6 +8,6 @@ module.exports = Sequelize.define("Car", {
     primaryKey: true
   },
   name: {
-    content: Sequelize.STRING(40)
+    type: Sequelize.STRING(40)
   }
 });
