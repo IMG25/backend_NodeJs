@@ -5,6 +5,9 @@ var router = express.Router();
 const CarsController = require("./controllers/cars");
 const bodyparser = require("body-parser");
 
+//DB Conection
+require("./database/connection");
+
 app.get("/", (req, res) => {
   res.send("<h1>Hello World</h1>");
 });
