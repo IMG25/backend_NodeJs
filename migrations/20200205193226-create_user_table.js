@@ -9,7 +9,7 @@ module.exports = {
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
-    return queryInterface.createTable("user", {
+    return queryInterface.createTable("users", {
       id: {
         type: Sequelize.INTEGER(11),
         autoIncrement: true,
@@ -20,7 +20,8 @@ module.exports = {
         type: Sequelize.STRING(60)
       },
       email: {
-        type: Sequelize.STRING(60)
+        type: Sequelize.STRING(60),
+        unique: true
       },
       password: {
         type: Sequelize.STRING(50),
@@ -32,14 +33,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    /*
-      Add reverting commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-      return queryInterface.dropTable('users');
-    */
-
-    return queryInterface.dropTable("user");
+    return queryInterface.dropTable("users");
   }
 };

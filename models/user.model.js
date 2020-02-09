@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 
-module.exports = Sequelize.define("User", {
+module.exports = sequelize.define("User", {
   id: {
     type: Sequelize.INTEGER(11),
     autoIncrement: true,
@@ -11,7 +11,8 @@ module.exports = Sequelize.define("User", {
     type: Sequelize.STRING(60)
   },
   email: {
-    type: Sequelize.STRING(60)
+    type: Sequelize.STRING(60),
+    unique: true
   },
   password: {
     type: Sequelize.STRING(50),
