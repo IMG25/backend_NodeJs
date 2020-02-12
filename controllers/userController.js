@@ -25,6 +25,7 @@ router.post("/register", (req, res) => {
   return UserModel.create({
     name: req.body.name,
     email: req.body.email,
+    role: req.body.role,
     password: bcrypt.hashSync(req.body.password, 10)
   })
     .then(response => {
@@ -39,7 +40,7 @@ router.post("/login", (req, res) => {
   // return res.send(req.body);
   return UserModel.findOne({ where: { email: req.body.email } })
     .then(response => {
-      console.log(response.dataValues);
+      // console.log(response.dataValues);
       if (!response.dataValues) return res.status(404).send("No user found.");
       const user = response.dataValues;
       var passwordIsValid = bcrypt.compare(req.body.password, user.password);
@@ -54,8 +55,17 @@ router.post("/login", (req, res) => {
       res.status(200).send({ auth: true, user: user, token: token });
     })
     .catch(err => {
-      return res.status(500).send({ msg: "Error on the server.", error: err });
+      return res.status(404).send({ msg: "No user found." });
     });
+});
+
+router.get("/me", (req, res) => {
+  let token = req.headers.authorization.split(" ")[1];
+
+  const user = jwt.decode(token, "secret");
+
+  console.log(user);
+  return res.status(200).send(user);
 });
 
 module.exports = router;

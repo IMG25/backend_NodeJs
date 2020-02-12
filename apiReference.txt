@@ -1,0 +1,57 @@
+Register(Customer Agent)
+    Ex:- POST
+        localhost:3000/user/register
+        Attributes{
+            name: STRING,
+            email: STRING,
+            role: STRING,
+            password: STRING
+        }
+
+
+Sign in
+    Ex:- POST
+        localhost:3000/user/login
+        BODY{
+            email: STRING,
+            password: STRING
+        }
+
+
+Add vehicle
+    Ex:- POST
+        localhost:3000/cars/add
+        BODY{
+            name: STRING,
+            type: STRING,
+            vehicleNo: INTEGER,
+            pricePerHour: INTEGER,
+            status: TINYINT(1),
+            contactNo: INTEGER,
+            address: STRING,
+            photo: STRING,
+        }
+
+View All Vehicles(Customers)
+    Ex:- GET
+        localhost:3000/cars/all
+
+
+View All Available Vehicles(Customers)
+    Ex:- GET
+        localhost:3000/cars/allAvailable
+
+
+User Profile
+    Ex:- GET
+        localhost:3000/user/me
+        Headers{
+            authorization: STRING,
+            Ex:-
+            authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJUaGlyYW5qYXlhIiwiZW1haWwiOiJ0aGlyYUBnbWFpbC5jb21tIiwicGFzc3dvcmQiOiJ0aGlyYTEyMyJ9LCJpYXQiOjE1ODE1Mjk1MTEsImV4cCI6MTU4MTYxNTkxMX0.k2BfEpCqsSlPvEhDF5zMoFjw3nfNhgK8wmJnYY7_pqM
+        }
+
+
+
+Requst a vehicle(customer)
+Confirm vehicle(agent)
