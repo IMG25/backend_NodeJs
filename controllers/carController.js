@@ -19,7 +19,13 @@ router.get("/all", checkAuth, (req, res) => {
 
 router.post("/add", (req, res) => {
   return Car.create({
-    name: req.body.name
+    name: req.body.name,
+    type: req.body.type,
+    vehicleNo: req.body.vehicleNo,
+    pricePerHour: req.body.pricePerHour,
+    contactNo: req.body.contactNo,
+    address: req.body.address,
+    photo: req.body.photo
   })
     .then(response => {
       res.send(response);

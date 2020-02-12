@@ -19,8 +19,27 @@ module.exports = {
       name: {
         type: Sequelize.STRING(40)
       },
-      createdAt: Sequelize.DATE,
-      updatedAt: Sequelize.DATE
+      type: {
+        type: Sequelize.STRING(40)
+      },
+      vehicleNo: {
+        type: Sequelize.INTEGER(10)
+      },
+      pricePerHour: {
+        type: Sequelize.INTEGER(10)
+      },
+      contactNo: {
+        type: Sequelize.INTEGER(15)
+      },
+      address: {
+        type: Sequelize.STRING(250)
+      },
+      photo: {
+        type: Sequelize.STRING(250)
+      },
+
+      updatedAt: Sequelize.DATE,
+      createdAt: Sequelize.DATE
     });
   },
 
