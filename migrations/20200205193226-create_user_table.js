@@ -23,6 +23,10 @@ module.exports = {
         type: Sequelize.STRING(60),
         unique: true
       },
+
+      role: {
+        type: Sequelize.STRING(40)
+      },
       password: {
         type: Sequelize.STRING(50),
         allowNull: false

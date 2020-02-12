@@ -17,6 +17,16 @@ router.get("/all", checkAuth, (req, res) => {
   });
 });
 
+router.get("/allAvailable", checkAuth, (req, res) => {
+  return Car.findAll({
+    where: {
+      status: 1
+    }
+  }).then(response => {
+    res.send(response);
+  });
+});
+
 router.post("/add", (req, res) => {
   return Car.create({
     name: req.body.name,

@@ -14,6 +14,11 @@ module.exports = sequelize.define("User", {
     type: Sequelize.STRING(60),
     unique: true
   },
+
+  role: {
+    type: Sequelize.STRING(40),
+    allowNull: false
+  },
   password: {
     type: Sequelize.STRING(50),
     allowNull: false

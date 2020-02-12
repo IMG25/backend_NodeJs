@@ -19,6 +19,10 @@ module.exports = sequelize.define("Car", {
   pricePerHour: {
     type: Sequelize.INTEGER(10)
   },
+  status: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true
+  },
   contactNo: {
     type: Sequelize.INTEGER(15)
   },
